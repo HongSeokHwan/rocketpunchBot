@@ -31,24 +31,20 @@ page.onConsoleMessage = function (msg) {
 
 page.open('https://www.rocketpunch.com').then(function (status) {
   console.log(status);
-  console.log(config.id);
   if (status != 'success') {
     log('Somthing went terribly wrong');
     slimer.exit();
   }
   log('Opend the main page');
   page.render('./img/00' + date + ' - init.png');
-  console.log(config.id);
 
   page.evaluate(click, '[data-target="#loginModal"]');
   wait(function () {
     page.render('./img/01 - login opened.png');
-    console.log(config.id);
     page.evaluate(function () {
-        console.log(config.id);
       $('form#form_login_inline')
-        .find('[name="email"]').val("EMAIL").end()
-        .find('[name="password"]').val("PASSWORD").end()
+        .find('[name="email"]').val('wjlee@qoontree.com').end()
+        .find('[name="password"]').val('Cjswosla1').end()
         .find('[type="submit"]').click();
     });
 
@@ -65,7 +61,6 @@ page.open('https://www.rocketpunch.com').then(function (status) {
           log('Company information edited');
           page.render('./img/04 - company edit succeeded.png');
 
-          /*
           page.open('https://www.rocketpunch.com/jobs/11850/edit').then(function (status) {
             page.render('./img/05 - job edit opened.png');
 
@@ -77,7 +72,6 @@ page.open('https://www.rocketpunch.com').then(function (status) {
               slimer.exit();
             });
           });
-          */
 
           slimer.exit();
 
