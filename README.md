@@ -8,4 +8,5 @@ slimerjs 0.9.6
 
 firefox 39.0
 
-change 'EMALI', 'PASSWORD' in rocket.js to your email,password
+change 'EMALI', 'PASSWORD' in rocket.js to your email,password and mkdir img
+

@@ -36,15 +36,15 @@ page.open('https://www.rocketpunch.com').then(function (status) {
     slimer.exit();
   }
   log('Opend the main page');
-  page.render('./img/00' + date + ' - init.png');
+  page.render('./img/00 - init.png');
 
   page.evaluate(click, '[data-target="#loginModal"]');
   wait(function () {
     page.render('./img/01 - login opened.png');
     page.evaluate(function () {
       $('form#form_login_inline')
-        .find('[name="email"]').val('wjlee@qoontree.com').end()
-        .find('[name="password"]').val('Cjswosla1').end()
+        .find('[name="email"]').val('EMAIL').end()
+        .find('[name="password"]').val('PASSWORD').end()
         .find('[type="submit"]').click();
     });
 
